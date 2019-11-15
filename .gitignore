@@ -1,0 +1,7 @@
+nbproject/private/
+dist/
+build/
+dist/
+nbdist/
+nbactions.xml
+nb-configuration.xml

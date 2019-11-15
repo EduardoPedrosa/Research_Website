@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Aplicação</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="google-signin-client_id" content="868435888421-i0joie1a7ua3ml0fcnc8csk8tdneqaga.apps.googleusercontent.com">
+        <link rel="stylesheet" type="text/css" href="styles/bootstrap.min.css" />
+        <link rel="stylesheet" type="text/css" href="styles/styles.css" />
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <script src="https://apis.google.com/js/platform.js" async defer></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src='scripts/signin.js'></script>
+    </head>
+    <body>
+        <div class="container col-md-12">
+            <div class="row justify-content-end">
+                <div class="col-md-3 login-area">
+                    É um pesquisador?
+                    <div class="g-signin2 login-button" data-onsuccess="onSignIn"></div>
+                </div>
+            </div>
+        </div>
+        <div class='row full align-items-center'>
+            <div class='col-md-12'>
+                <div class="row justify-content-center">
+                    <div class="col-md-5 code-area">
+                        Digite o código para responder o teste
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-md-5 code">
+                        <input type="text" class="form-control" name="code" placeholder="Código" />
+                        <button class="input-button"><i class="material-icons input-icon">send</i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <input id="allow-login" type="hidden" value=0 />
+    </body>
+</html>
