@@ -57,6 +57,8 @@ public class LoginController extends HttpServlet {
         try (PrintWriter out = response.getWriter()){
             boolean ehCadastrado = ServiceFactory.getPesquisadorService().ehCadastrado(pesquisador);
             if(ehCadastrado){
+                Integer idPes = ServiceFactory.getPesquisadorService().getId(pesquisador);
+                pesquisador.setId(idPes);
                 request.getSession().setAttribute("login", pesquisador);
             }
             out.print(ehCadastrado);

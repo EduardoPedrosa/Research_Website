@@ -44,7 +44,7 @@ public class ImagemController extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-//        LoginControl.checkLogin(request, response);
+
         String busca = request.getParameter("tagImg");
         ArrayList<String> imagens = null;
         try(PrintWriter out = response.getWriter()) {
@@ -82,7 +82,7 @@ public class ImagemController extends HttpServlet {
             FileItemFactory factory = new DiskFileItemFactory();
             ServletFileUpload upload = new ServletFileUpload(factory);
             Imagem imagem = new Imagem();
-
+            
             try(PrintWriter out = response.getWriter()) {
                 List items = upload.parseRequest(request);
                 Iterator iter = items.iterator();

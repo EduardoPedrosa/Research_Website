@@ -9,7 +9,7 @@ public class Teste {
     private Integer id;
     private String descricao;
     private String titulo;
-    private String emailPesquisador;
+    private Integer idPesquisador;
     private Integer visibilidade;
     private Date createdAt;
     private Date updatedAt;
@@ -17,16 +17,21 @@ public class Teste {
     public Teste(){
     }
     
-    public Teste(Integer id, String descricao, String titulo, String emailPesquisador, Integer visibilidade, Date createdAt, Date updatedAt) {
-        this.id = id;
+    public Teste(String descricao, String titulo, Integer idPesquisador, Integer visibilidade) {
         this.descricao = descricao;
         this.titulo = titulo;
-        this.emailPesquisador = emailPesquisador;
+        this.idPesquisador = idPesquisador;
+        this.visibilidade = visibilidade;
+    }
+    
+    public Teste(Integer id, String descricao, String titulo, Integer idPesquisador, Integer visibilidade, Date createdAt, Date updatedAt) {
+        this.descricao = descricao;
+        this.titulo = titulo;
+        this.idPesquisador = idPesquisador;
         this.visibilidade = visibilidade;
         this.createdAt = createdAt;
         this.updatedAt = updatedAt;
     }
-    
     
     public int getId() {
         return id;
@@ -40,8 +45,8 @@ public class Teste {
         return titulo;
     }
 
-    public String getEmailPesquisador() {
-        return emailPesquisador;
+    public Integer getIdPesquisador() {
+        return idPesquisador;
     }
 
     public Integer getVisibilidade() {
@@ -76,8 +81,8 @@ public class Teste {
         this.titulo = titulo;
     }
 
-    public void setEmailPesquisador(String emailPesquisador) {
-        this.emailPesquisador = emailPesquisador;
+    public void setEmailPesquisador(Integer idPesquisador) {
+        this.idPesquisador = idPesquisador;
     }
 
     public void setVisibilidade(Integer visibilidade) {

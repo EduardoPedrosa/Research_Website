@@ -123,4 +123,28 @@ public class PesquisadorService {
         System.out.println("SIZE:"+email.size());
         return email;
     }
+    
+    public Integer getId(Pesquisador pesquisador) throws Exception {
+        Connection conn = DbConnection.getInstance().getConnection();
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        Integer id = null;
+        try {
+            ps = conn.prepareStatement("SELECT PES_id FROM Pesquisador WHERE PES_email = ?");
+            ps.setString(1, pesquisador.getEmail());
+            rs = ps.executeQuery();
+            if(rs.first()){
+                id = rs.getInt("PES_id");
+            }
+        } finally {
+            if (ps != null) {
+                ps.close();
+            }
+            if (rs != null) {
+                rs.close();
+            }
+            conn.close();
+        }
+        return id;
+    }
 }
